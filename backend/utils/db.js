@@ -1,5 +1,6 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
-const mongoDbUrl = "mongodb+srv://tushar:tushar@cluster0.iljls.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const mongoDbUrl = process.env.MONGODB_URL;
 
 const connectDB = () => {
   try {
