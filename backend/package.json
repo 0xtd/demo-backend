@@ -1,0 +1,19 @@
+{
+  "name": "starting-server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Tushar",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
