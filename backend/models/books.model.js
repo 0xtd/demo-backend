@@ -15,9 +15,8 @@ const bookSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  published: {
-    type: Date,
-    required: true,
+  publishedDate: {
+    type: String,
   },
   publisher: {
     type: String,
@@ -31,7 +30,10 @@ const bookSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
+},
+{
+  timestamps: true,
 });
 
-const bookModel = mongoose.model('books', bookSchema);
-module.exports = bookModel;
+const Book = mongoose.model('books', bookSchema);
+module.exports = Book;
