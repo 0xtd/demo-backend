@@ -41,3 +41,41 @@ exports.getBook = async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 }
+
+// Controller For Update of Book
+exports.updateBook = async (req, res) => {
+  try {
+    const { title, author, description, publishedDate, publisher, pages, imageUrl } = req.body;
+
+    let updatedBook = new Book({
+      title,
+      author,
+      description,
+      publishedDate,
+      publisher,
+      pages,
+      imageUrl,
+      _id: req.params.id,
+    });
+
+    updatedBook = await Book.findByIdAndUpdate(req.params.id, updatedBook);
+
+    res.json({
+      message: `Book with id ${req.params.id} updated successfully`
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+}
+
+// Controller For Book Delete
+exports.deleteBook = async (req, res) => {
+  try {
+    const deletedBook = await Book.findByIdAndDelete(req.params.id);
+    res.json({
+      message: `Book with id ${req.params.id} deleted successfully`
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+}
