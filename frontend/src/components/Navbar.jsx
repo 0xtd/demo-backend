@@ -17,6 +17,7 @@ const Navbar = () => {
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/all-books">All Books</a></li>
       </ul>
 
       {/* Login Button */}
